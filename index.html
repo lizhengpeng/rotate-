@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>转盘抽奖特效</title>
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+<div id="box">
+    <div class="rotateArrow"></div>
+    <div class="user">
+        <ul>
+            <li>1382****851</li>
+            <li>1383****851</li>
+            <li>1384****855</li>
+            <li>1382****851</li>
+            <li>1382****851</li>
+            <li>1382****851</li>
+            <li>1382****851</li>
+            <li>1382****851</li>
+            <li>1382****851</li>
+            <li>1383****851</li>
+            <li>1384****855</li>
+            <li>1382****851</li>
+            <li>1382****851</li>
+            <li>1383****851</li>
+            <li>1384****855</li>
+            <li>1382****851</li>
+            <li>1384****855</li>
+            <li>1382****851</li>
+            <li>1384****855</li>
+            <li>1382****851</li>
+        </ul>
+    </div>
+    <div class="result">
+        <a href=""></a>
+        <p>谢谢参与</p>
+    </div>
+</div>
+<script src="js/jquery.min.js"></script>
+<script src="js/jquery.rotate.min.js"></script>
+<script>
+    $(function () {
+        var that;
+        $(".rotateArrow").on("click", function () {
+            that = $(this);
+            var n = Math.floor(Math.random() * 8);
+            switch (n) {
+                case 0:
+                    rotateFun(0, "谢谢参与！！");
+                    break;
+                case 1:
+                    rotateFun(45, "恭喜你获得5元代金券");
+                    break;
+                case 2:
+                    rotateFun(90, "恭喜你获得1元代金券");
+                    break;
+                case 3:
+                    rotateFun(135, "恭喜你获得10元代金券");
+                    break;
+                case 4:
+                    rotateFun(180, "谢谢参与！！");
+                    break;
+                case 5:
+                    rotateFun(225, "恭喜你获得20元代金券");
+                    break;
+                case 6:
+                    rotateFun(270, "恭喜你获得50元代金券");
+                    break;
+                case 7:
+                    rotateFun(315, "恭喜你获得30元代金券");
+                    break;
+            }
+        });
+        $(".result a").on("click", function () {
+            $(".result").hide();
+        });
+
+        function rotateFun(deg, text) {
+            that.rotate({
+                angle: 0,
+                duration: 5000,
+                animateTo: 360 * 4 + deg,
+                callback: function () {
+                    $(".result").show();
+                    $(".result p").html(text);
+                }
+            });
+        }
+
+
+        setInterval(function () {
+            $(".user ul").animate({top: "-37px"}, 500, function () {
+                $(this).append($(".user ul li:first"));
+                $(this).css("top", "0");
+            });
+        }, 1000)
+
+    })
+</script>
+</body>
+</html>

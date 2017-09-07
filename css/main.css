@@ -1,0 +1,73 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #f00;
+}
+
+#box {
+    position: relative;
+    width: 854px;
+    height: 504px;
+    background: #f00 url("../images/bg1.png") no-repeat;
+    margin: 50px auto;
+}
+
+.rotateArrow {
+    position: absolute;
+    left: 181px;
+    top: 105px;
+    width: 294px;
+    height: 294px;
+    background: url(../images/arrow.png) no-repeat;
+}
+
+.user {
+    position: absolute;
+    right: 39px;
+    top: 142px;
+    width: 140px;
+    height: 330px;
+    overflow: hidden;
+}
+
+.user ul {
+    position: relative;
+    top: 0;
+}
+
+.user ul li {
+    list-style: none;
+    height: 37px;
+    text-indent: 25px;
+    line-height: 37px;
+    background: url("../images/user.png") no-repeat 0 center;
+    color: #ff0;
+}
+
+.result {
+    display: none;
+    position: absolute;
+    left: 128px;
+    top: 191px;
+    width: 400px;
+    height: 120px;
+    background: rgba(0, 0, 0, .5);
+}
+
+.result p {
+    color: #fff;
+    text-align: center;
+    line-height: 120px;
+}
+
+.result a {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 24px;
+    height: 24px;
+    background: url(../images/close.png) no-repeat;
+}
